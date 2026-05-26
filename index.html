@@ -8,6 +8,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 
   <style>
+
     *{
       margin:0;
       padding:0;
@@ -53,8 +54,15 @@
     }
 
     @keyframes twinkle{
-      0%,100%{opacity:.2;transform:scale(1)}
-      50%{opacity:1;transform:scale(2)}
+      0%,100%{
+        opacity:.2;
+        transform:scale(1);
+      }
+
+      50%{
+        opacity:1;
+        transform:scale(2);
+      }
     }
 
     .hero{
@@ -78,8 +86,13 @@
     }
 
     @keyframes float{
-      0%,100%{transform:translateY(0)}
-      50%{transform:translateY(-15px)}
+      0%,100%{
+        transform:translateY(0);
+      }
+
+      50%{
+        transform:translateY(-15px);
+      }
     }
 
     h1{
@@ -312,6 +325,7 @@
     }
 
     @media(max-width:768px){
+
       h1{
         font-size:3rem;
       }
@@ -328,7 +342,9 @@
         width:140px;
         height:140px;
       }
+
     }
+
   </style>
 </head>
 <body>
@@ -342,34 +358,49 @@
 <div class="lantern" style="left:90%; animation-duration:17s;">✨</div>
 
 <section class="hero">
+
   <div class="moon"></div>
 
   <div style="display:flex;gap:25px;flex-wrap:wrap;justify-content:center;margin-bottom:40px;">
-    <img src="me.jpg" alt="NAHI" style="width:220px;height:220px;object-fit:cover;border-radius:30px;border:3px solid #ff9d00;box-shadow:0 0 35px #ff7b00;">
 
-    <img src="nahi.jpg" alt="Couple" style="width:220px;height:220px;object-fit:cover;border-radius:30px;border:3px solid #ff9d00;box-shadow:0 0 35px #ff7b00;">
+    <img src="me.jpg" alt="Me"
+    style="width:220px;height:220px;object-fit:cover;border-radius:30px;border:3px solid #ff9d00;box-shadow:0 0 35px #ff7b00;">
+
+    <img src="nahi.jpg" alt="NAHI"
+    style="width:220px;height:220px;object-fit:cover;border-radius:30px;border:3px solid #ff9d00;box-shadow:0 0 35px #ff7b00;">
+
   </div>
 
-  <h1>NAHI 🧡<br>جەژنی قوربانت پیرۆز بێت 🌙</h1>
+  <h1>
+    NAHI 🧡<br>
+    جەژنی قوربانت پیرۆز بێت 🌙
+  </h1>
 
   <p>
-    لەگەڵ هاتنی جەژنی قوربان، دڵم تەنها بیر لە تۆ دەکاتەوە.
-    تۆ جوانترین بەشی ژیانمی و هەموو خۆشییەکانم بە بوونی تۆ واتا دەگرن.
-    هیوادارم هەمیشە پێکەوە بین و هەموو جەژنێکمان پڕبێت لە خۆشەویستی و ئارامی.
+    لەگەڵ هاتنی جەژنی قوربان،
+    دڵم تەنها بیر لە تۆ دەکاتەوە.
+    تۆ جوانترین بەشی ژیانمی و
+    هەموو خۆشییەکانم بە بوونی تۆ واتا دەگرن.
+    هیوادارم هەمیشە پێکەوە بین و
+    هەموو جەژنێکمان پڕبێت لە خۆشەویستی و ئارامی.
   </p>
 
-  <button class="btn" onclick="document.getElementById('celebration').scrollIntoView()">
+  <button class="btn"
+  onclick="document.getElementById('celebration').scrollIntoView()">
     دەستپێکردنی جەژن
   </button>
+
 </section>
 
 <section id="celebration">
+
   <h2 class="section-title">بۆ تۆ 🤍</h2>
 
   <div class="cards">
 
     <div class="card">
       <h3>🧡 ئازیزەکەم</h3>
+
       <p>
         تۆ جوانترین ڕووناکی ژیانمی.
         لە هەموو جەژنێکدا دڵم زیاتر پەیوەست دەبێت بە تۆ.
@@ -378,47 +409,66 @@
 
     <div class="card">
       <h3>🌙 هەستی دڵم</h3>
+
       <p>
-        کاتێک ناوت دەبیستم، هەموو دونیا ئارام دەبێت.
+        کاتێک ناوت دەبیستم،
+        هەموو دونیا ئارام دەبێت.
         تۆ هۆکاری خەندە و خۆشیی دڵمی.
       </p>
     </div>
 
     <div class="card">
       <h3>✨ جەژنی ئێمە</h3>
+
       <p>
-        هیوادارم ئەم جەژنە سەرەتای خۆشترین یادەوەرییەکانمان بێت.
+        هیوادارم ئەم جەژنە
+        سەرەتای خۆشترین یادەوەرییەکانمان بێت.
         من و تۆ، هەمیشە پێکەوە.
       </p>
     </div>
 
   </div>
+
 </section>
 
 <section>
+
   <div class="dua">
+
     <h2>🕌 دووعا و پیرۆزی</h2>
 
     <p>
       ﴿ فَصَلِّ لِرَبِّكَ وَانْحَرْ ﴾
       <br><br>
-      خودای گەورە هەموو قوربانی و نزاکانمان وەرگرێت و ئەم جەژنە بکاتە سەرچاوەی خۆشی و ئارامی بۆ هەموو خێزانێکی کوردی.
+      خودای گەورە هەموو قوربانی و نزاکانمان وەرگرێت
+      و ئەم جەژنە بکاتە سەرچاوەی خۆشی و ئارامی
+      بۆ هەموو خێزانێکی کوردی.
     </p>
+
   </div>
+
 </section>
 
 <section>
+
   <h2 class="section-title">گالەری جەژن 📸</h2>
 
   <div class="gallery">
-    <img src="me.jpg" alt="NAHI">
-    <img src="nahi.jpg" alt="Love">
-    <img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?q=80&w=1200&auto=format&fit=crop" alt="Orange Flowers">
+
+    <img src="me.jpg" alt="Me">
+
+    <img src="nahi.jpg" alt="NAHI">
+
+    <img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?q=80&w=1200&auto=format&fit=crop" alt="Flowers">
+
     <img src="https://images.unsplash.com/photo-1462275646964-a0e3386b89fa?q=80&w=1200&auto=format&fit=crop" alt="Orange Roses">
+
   </div>
+
 </section>
 
 <section>
+
   <h2 class="section-title">کاتی جەژن ⏳</h2>
 
   <div class="countdown">
@@ -444,47 +494,57 @@
     </div>
 
   </div>
+
 </section>
 
 <section>
+
   <div class="music-box">
+
     <h2 class="section-title">مۆسیقای جەژن 🎶</h2>
 
     <p style="line-height:2;color:#ddd;max-width:800px;margin:auto;">
-      مۆسیقایەکی romantic و نەرمی خۆشەویستی بۆ ساتە جوانەکانمان 🧡
+      مۆسیقایەکی romantic و نەرمی خۆشەویستی
+      بۆ ساتە جوانەکانمان 🧡
     </p>
 
     <audio controls loop>
-      <source src="https://cdn.pixabay.com/download/audio/2022/01/18/audio_d0d3f6e4d5.mp3?filename=romantic-love-11786.mp3" type="audio/mpeg">
+      <source
+      src="https://cdn.pixabay.com/download/audio/2022/01/18/audio_d0d3f6e4d5.mp3?filename=romantic-love-11786.mp3"
+      type="audio/mpeg">
     </audio>
+
   </div>
+
 </section>
 
 <section>
+
   <h2 class="section-title">ناردنی پیرۆزبایی 💌</h2>
 
-  <form 
-    class="message-form"
-    action="https://formsubmit.co/naremanhesamadin@gmail.com"
-    method="POST"
-  >
+  <form class="message-form" onsubmit="sendMail(event)">
 
-    <input type="hidden" name="_subject" value="New Eid Message From NAHI Website 💌">
+    <input
+    type="text"
+    id="name"
+    placeholder="ناوت بنووسە"
+    required>
 
-    <input type="hidden" name="_captcha" value="false">
+    <textarea
+    id="message"
+    placeholder="پەیامی پیرۆزباییت..."
+    required></textarea>
 
-    <input type="hidden" name="_template" value="table">
-
-    <input type="text" name="name" placeholder="ناوت بنووسە" required>
-
-    <textarea name="message" placeholder="پەیامی پیرۆزباییت..." required></textarea>
-
-    <button class="btn">ناردنی پەیام</button>
+    <button class="btn">
+      ناردنی پەیام
+    </button>
 
   </form>
+
 </section>
 
 <footer>
+
   <p>
     دروستکراوە تەنها بۆ تۆ NAHI 🧡
   </p>
@@ -496,36 +556,83 @@
   <p>
     جەژنی قوربانتان پیرۆز بێت 🌙✨
   </p>
+
 </footer>
 
 <script>
 
   for(let i=0;i<120;i++){
+
     const star=document.createElement('span');
+
     star.style.left=Math.random()*100+'%';
+
     star.style.top=Math.random()*100+'%';
-    star.style.animationDuration=(Math.random()*5+2)+'s';
-    document.querySelector('.stars').appendChild(star);
+
+    star.style.animationDuration=
+    (Math.random()*5+2)+'s';
+
+    document.querySelector('.stars')
+    .appendChild(star);
+
   }
 
-  const targetDate = new Date('June 6, 2026 00:00:00').getTime();
+  const targetDate =
+  new Date('June 6, 2026 00:00:00').getTime();
 
   setInterval(()=>{
 
     const now = new Date().getTime();
+
     const distance = targetDate - now;
 
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    const days =
+    Math.floor(distance / (1000 * 60 * 60 * 24));
+
+    const hours =
+    Math.floor((distance % (1000 * 60 * 60 * 24))
+    / (1000 * 60 * 60));
+
+    const minutes =
+    Math.floor((distance % (1000 * 60 * 60))
+    / (1000 * 60));
+
+    const seconds =
+    Math.floor((distance % (1000 * 60))
+    / 1000);
 
     document.getElementById('days').innerHTML = days;
+
     document.getElementById('hours').innerHTML = hours;
+
     document.getElementById('minutes').innerHTML = minutes;
+
     document.getElementById('seconds').innerHTML = seconds;
 
   },1000);
+
+  function sendMail(e){
+
+    e.preventDefault();
+
+    let name =
+    document.getElementById("name").value;
+
+    let message =
+    document.getElementById("message").value;
+
+    let subject =
+    "Message From NAHI Website 💌";
+
+    let body =
+    "Name: " + name + "%0D%0A%0D%0A" +
+    "Message:%0D%0A" + message;
+
+    window.location.href =
+    "mailto:naremanhesamadin@gmail.com?subject="
+    + subject + "&body=" + body;
+
+  }
 
 </script>
 
