@@ -345,9 +345,9 @@
   <div class="moon"></div>
 
   <div style="display:flex;gap:25px;flex-wrap:wrap;justify-content:center;margin-bottom:40px;">
-    <img src="image.png" alt="NAHI" style="width:220px;height:220px;object-fit:cover;border-radius:30px;border:3px solid #ff9d00;box-shadow:0 0 35px #ff7b00;">
+    <img src="me.png" alt="NAHI" style="width:220px;height:220px;object-fit:cover;border-radius:30px;border:3px solid #ff9d00;box-shadow:0 0 35px #ff7b00;">
 
-    <img src="image(1).png" alt="Couple" style="width:220px;height:220px;object-fit:cover;border-radius:30px;border:3px solid #ff9d00;box-shadow:0 0 35px #ff7b00;">
+    <img src="nahi.png" alt="Couple" style="width:220px;height:220px;object-fit:cover;border-radius:30px;border:3px solid #ff9d00;box-shadow:0 0 35px #ff7b00;">
   </div>
 
   <h1>NAHI 🧡<br>جەژنی قوربانت پیرۆز بێت 🌙</h1>
@@ -411,8 +411,8 @@
   <h2 class="section-title">گالەری جەژن 📸</h2>
 
   <div class="gallery">
-    <img src="image.png" alt="NAHI">
-    <img src="image(1).png" alt="Love">
+    <img src="me.png" alt="NAHI">
+    <img src="nahi.png" alt="Love">
     <img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?q=80&w=1200&auto=format&fit=crop" alt="Orange Flowers">
     <img src="https://images.unsplash.com/photo-1462275646964-a0e3386b89fa?q=80&w=1200&auto=format&fit=crop" alt="Orange Roses">
   </div>
