@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="ku" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NAHI | بۆ ئازیزترین کەس</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:'Noto Sans Arabic',sans-serif;
+      background:#090909;
+      color:white;
+      overflow-x:hidden;
+      background-image:
+      radial-gradient(circle at top right,#ff7b0088,transparent 25%),
+      radial-gradient(circle at bottom left,#ffae0080,transparent 25%),
+      linear-gradient(to bottom,#0d0d0d,#111111,#1a1a1a);
+    }
+
+    ::selection{
+      background:#ff8c00;
+      color:white;
+    }
+
+    .stars{
+      position:fixed;
+      width:100%;
+      height:100%;
+      top:0;
+      left:0;
+      z-index:-1;
+      overflow:hidden;
+    }
+
+    .stars span{
+      position:absolute;
+      display:block;
+      width:2px;
+      height:2px;
+      background:white;
+      border-radius:50%;
+      animation:twinkle 4s linear infinite;
+      opacity:0.4;
+    }
+
+    @keyframes twinkle{
+      0%,100%{opacity:.2;transform:scale(1)}
+      50%{opacity:1;transform:scale(2)}
+    }
+
+    .hero{
+      min-height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      flex-direction:column;
+      text-align:center;
+      padding:20px;
+      position:relative;
+    }
+
+    .moon{
+      width:180px;
+      height:180px;
+      border-radius:50%;
+      box-shadow:-40px 0 0 #ff9d00;
+      margin-bottom:40px;
+      animation:float 5s ease-in-out infinite;
+    }
+
+    @keyframes float{
+      0%,100%{transform:translateY(0)}
+      50%{transform:translateY(-15px)}
+    }
+
+    h1{
+      font-size:5rem;
+      color:#ffae00;
+      text-shadow:0 0 25px #ff7b00;
+      margin-bottom:20px;
+      line-height:1.4;
+    }
+
+    .hero p{
+      max-width:900px;
+      font-size:1.3rem;
+      color:#ddd;
+      line-height:2.2;
+    }
+
+    .btn{
+      margin-top:40px;
+      padding:16px 45px;
+      border:none;
+      border-radius:60px;
+      background:linear-gradient(45deg,#ff7b00,#ffb700);
+      color:white;
+      font-size:1rem;
+      cursor:pointer;
+      transition:.4s;
+      box-shadow:0 0 25px #ff7b00;
+    }
+
+    .btn:hover{
+      transform:translateY(-5px) scale(1.05);
+      box-shadow:0 0 40px #ff9d00;
+    }
+
+    section{
+      padding:120px 10%;
+    }
+
+    .section-title{
+      text-align:center;
+      font-size:3rem;
+      margin-bottom:70px;
+      color:#ffae00;
+      text-shadow:0 0 15px #ff7b00;
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:30px;
+    }
+
+    .card{
+      background:rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.1);
+      backdrop-filter:blur(10px);
+      padding:35px;
+      border-radius:30px;
+      transition:.5s;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .card::before{
+      content:'';
+      position:absolute;
+      width:150px;
+      height:150px;
+      background:#ff7b0030;
+      border-radius:50%;
+      top:-40px;
+      left:-40px;
+    }
+
+    .card:hover{
+      transform:translateY(-10px);
+      box-shadow:0 0 35px #ff7b0050;
+      border-color:#ff9d00;
+    }
+
+    .card h3{
+      font-size:1.7rem;
+      color:#ffb700;
+      margin-bottom:20px;
+    }
+
+    .card p{
+      color:#ddd;
+      line-height:2;
+    }
+
+    .dua{
+      background:rgba(255,255,255,.04);
+      border-radius:40px;
+      padding:60px;
+      text-align:center;
+      border:1px solid rgba(255,255,255,.1);
+      backdrop-filter:blur(15px);
+      box-shadow:0 0 40px #ff7b0020;
+    }
+
+    .dua h2{
+      color:#ffb700;
+      font-size:2.3rem;
+      margin-bottom:30px;
+    }
+
+    .dua p{
+      line-height:2.5;
+      color:#eee;
+      font-size:1.2rem;
+    }
+
+    .gallery{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:25px;
+    }
+
+    .gallery img{
+      width:100%;
+      height:320px;
+      object-fit:cover;
+      border-radius:25px;
+      transition:.5s;
+      border:2px solid transparent;
+    }
+
+    .gallery img:hover{
+      transform:scale(1.04);
+      border-color:#ff9d00;
+      box-shadow:0 0 30px #ff7b00;
+    }
+
+    .countdown{
+      display:flex;
+      justify-content:center;
+      gap:25px;
+      flex-wrap:wrap;
+    }
+
+    .time-box{
+      width:180px;
+      height:180px;
+      background:rgba(255,255,255,.05);
+      border-radius:35px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      border:1px solid rgba(255,255,255,.1);
+      backdrop-filter:blur(12px);
+      transition:.4s;
+    }
+
+    .time-box:hover{
+      transform:translateY(-10px);
+      box-shadow:0 0 30px #ff7b0040;
+    }
+
+    .time-box h2{
+      font-size:3.5rem;
+      color:#ffae00;
+    }
+
+    .time-box span{
+      margin-top:10px;
+      color:#ddd;
+      font-size:1.1rem;
+    }
+
+    .music-box{
+      text-align:center;
+    }
+
+    audio{
+      width:100%;
+      margin-top:40px;
+      filter:invert(1);
+    }
+
+    .message-form{
+      max-width:700px;
+      margin:auto;
+      display:flex;
+      flex-direction:column;
+      gap:25px;
+    }
+
+    .message-form input,
+    .message-form textarea{
+      padding:20px;
+      border:none;
+      border-radius:20px;
+      background:rgba(255,255,255,.06);
+      color:white;
+      border:1px solid rgba(255,255,255,.1);
+      font-size:1rem;
+      outline:none;
+    }
+
+    .message-form textarea{
+      height:180px;
+      resize:none;
+    }
+
+    footer{
+      padding:50px 20px;
+      text-align:center;
+      background:#0b0b0b;
+      border-top:1px solid rgba(255,255,255,.1);
+      color:#bbb;
+      line-height:2.2;
+    }
+
+    .lantern{
+      position:fixed;
+      top:-100px;
+      font-size:2rem;
+      animation:fall linear infinite;
+      opacity:.6;
+      z-index:-1;
+    }
+
+    @keyframes fall{
+      to{
+        transform:translateY(120vh) rotate(360deg);
+      }
+    }
+
+    @media(max-width:768px){
+      h1{
+        font-size:3rem;
+      }
+
+      .hero p{
+        font-size:1rem;
+      }
+
+      .section-title{
+        font-size:2.2rem;
+      }
+
+      .time-box{
+        width:140px;
+        height:140px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="stars"></div>
+
+<div class="lantern" style="left:10%; animation-duration:15s;">🏮</div>
+<div class="lantern" style="left:30%; animation-duration:18s;">✨</div>
+<div class="lantern" style="left:50%; animation-duration:20s;">🌙</div>
+<div class="lantern" style="left:70%; animation-duration:14s;">🏮</div>
+<div class="lantern" style="left:90%; animation-duration:17s;">✨</div>
+
+<section class="hero">
+  <div class="moon"></div>
+
+  <div style="display:flex;gap:25px;flex-wrap:wrap;justify-content:center;margin-bottom:40px;">
+    <img src="image.png" alt="NAHI" style="width:220px;height:220px;object-fit:cover;border-radius:30px;border:3px solid #ff9d00;box-shadow:0 0 35px #ff7b00;">
+
+    <img src="image(1).png" alt="Couple" style="width:220px;height:220px;object-fit:cover;border-radius:30px;border:3px solid #ff9d00;box-shadow:0 0 35px #ff7b00;">
+  </div>
+
+  <h1>NAHI 🧡<br>جەژنی قوربانت پیرۆز بێت 🌙</h1>
+
+  <p>
+    لەگەڵ هاتنی جەژنی قوربان، دڵم تەنها بیر لە تۆ دەکاتەوە.
+    تۆ جوانترین بەشی ژیانمی و هەموو خۆشییەکانم بە بوونی تۆ واتا دەگرن.
+    هیوادارم هەمیشە پێکەوە بین و هەموو جەژنێکمان پڕبێت لە خۆشەویستی و ئارامی.
+  </p>
+
+  <button class="btn" onclick="document.getElementById('celebration').scrollIntoView()">
+    دەستپێکردنی جەژن
+  </button>
+</section>
+
+<section id="celebration">
+  <h2 class="section-title">بۆ تۆ 🤍</h2>
+
+  <div class="cards">
+
+    <div class="card">
+      <h3>🧡 ئازیزەکەم</h3>
+      <p>
+        تۆ جوانترین ڕووناکی ژیانمی.
+        لە هەموو جەژنێکدا دڵم زیاتر پەیوەست دەبێت بە تۆ.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>🌙 هەستی دڵم</h3>
+      <p>
+        کاتێک ناوت دەبیستم، هەموو دونیا ئارام دەبێت.
+        تۆ هۆکاری خەندە و خۆشیی دڵمی.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>✨ جەژنی ئێمە</h3>
+      <p>
+        هیوادارم ئەم جەژنە سەرەتای خۆشترین یادەوەرییەکانمان بێت.
+        من و تۆ، هەمیشە پێکەوە.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<section>
+  <div class="dua">
+    <h2>🕌 دووعا و پیرۆزی</h2>
+
+    <p>
+      ﴿ فَصَلِّ لِرَبِّكَ وَانْحَرْ ﴾
+      <br><br>
+      خودای گەورە هەموو قوربانی و نزاکانمان وەرگرێت و ئەم جەژنە بکاتە سەرچاوەی خۆشی و ئارامی بۆ هەموو خێزانێکی کوردی.
+    </p>
+  </div>
+</section>
+
+<section>
+  <h2 class="section-title">گالەری جەژن 📸</h2>
+
+  <div class="gallery">
+    <img src="image.png" alt="NAHI">
+    <img src="image(1).png" alt="Love">
+    <img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?q=80&w=1200&auto=format&fit=crop" alt="Orange Flowers">
+    <img src="https://images.unsplash.com/photo-1462275646964-a0e3386b89fa?q=80&w=1200&auto=format&fit=crop" alt="Orange Roses">
+  </div>
+</section>
+
+<section>
+  <h2 class="section-title">کاتی جەژن ⏳</h2>
+
+  <div class="countdown">
+
+    <div class="time-box">
+      <h2 id="days">00</h2>
+      <span>ڕۆژ</span>
+    </div>
+
+    <div class="time-box">
+      <h2 id="hours">00</h2>
+      <span>کاتژمێر</span>
+    </div>
+
+    <div class="time-box">
+      <h2 id="minutes">00</h2>
+      <span>خولەک</span>
+    </div>
+
+    <div class="time-box">
+      <h2 id="seconds">00</h2>
+      <span>چرکە</span>
+    </div>
+
+  </div>
+</section>
+
+<section>
+  <div class="music-box">
+    <h2 class="section-title">مۆسیقای جەژن 🎶</h2>
+
+    <p style="line-height:2;color:#ddd;max-width:800px;margin:auto;">
+      مۆسیقایەکی romantic و نەرمی خۆشەویستی بۆ ساتە جوانەکانمان 🧡
+    </p>
+
+    <audio controls autoplay loop>
+      <source src="https://cdn.pixabay.com/download/audio/2022/01/18/audio_d0d3f6e4d5.mp3?filename=romantic-love-11786.mp3" type="audio/mpeg">
+    </audio>
+  </div>
+</section>
+
+<section>
+  <h2 class="section-title">ناردنی پیرۆزبایی 💌</h2>
+
+  <form class="message-form" onsubmit="sendMessage(event)">
+    <input type="text" placeholder="ناوت بنووسە" required>
+
+    <textarea placeholder="پەیامی پیرۆزباییت..." required></textarea>
+
+    <button class="btn">ناردنی پەیام</button>
+  </form>
+</section>
+
+<footer>
+  <p>
+    دروستکراوە تەنها بۆ تۆ NAHI 🧡
+  </p>
+
+  <p>
+    NAHI © 2026
+  </p>
+
+  <p>
+    جەژنی قوربانتان پیرۆز بێت 🌙✨
+  </p>
+</footer>
+
+<script>
+
+  for(let i=0;i<120;i++){
+    const star=document.createElement('span');
+    star.style.left=Math.random()*100+'%';
+    star.style.top=Math.random()*100+'%';
+    star.style.animationDuration=(Math.random()*5+2)+'s';
+    document.querySelector('.stars').appendChild(star);
+  }
+
+  function sendMessage(e){
+    e.preventDefault();
+    alert('سوپاس 💌 پەیامی پیرۆزباییت نێردرا');
+  }
+
+  const targetDate = new Date('June 6, 2026 00:00:00').getTime();
+
+  setInterval(()=>{
+
+    const now = new Date().getTime();
+    const distance = targetDate - now;
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById('days').innerHTML = days;
+    document.getElementById('hours').innerHTML = hours;
+    document.getElementById('minutes').innerHTML = minutes;
+    document.getElementById('seconds').innerHTML = seconds;
+
+  },1000);
+
+</script>
+
+</body>
+</html>
