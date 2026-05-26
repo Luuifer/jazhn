@@ -522,24 +522,33 @@
 
   <h2 class="section-title">ناردنی پیرۆزبایی 💌</h2>
 
-  <form class="message-form" onsubmit="sendTelegram(event)">
+ <form class="message-form" onsubmit="sendMail(event)">
 
-    <input
+  <input
     type="text"
     id="name"
     placeholder="ناوت بنووسە"
-    required>
+    required
+  >
 
-    <textarea
+  <input
+    type="email"
+    id="email"
+    placeholder="ئیمەیڵەکەت"
+    required
+  >
+
+  <textarea
     id="message"
     placeholder="پەیامی پیرۆزباییت..."
-    required></textarea>
+    required
+  ></textarea>
 
-    <button class="btn">
-      ناردنی پەیام
-    </button>
+  <button class="btn" type="submit">
+    ناردنی پەیام
+  </button>
 
-  </form>
+</form>
 
 </section>
 
@@ -611,40 +620,25 @@
 
   },1000);
 
-  async function sendTelegram(e){
+  function sendMail(e){
+  e.preventDefault();
 
-    e.preventDefault();
+  let name = document.getElementById("name").value;
+  let email = document.getElementById("email").value;
+  let message = document.getElementById("message").value;
 
-    let name =
-    document.getElementById("name").value;
+  let subject = "💌 Message From NAHI Website";
 
-    let message =
-    document.getElementById("message").value;
+  let body =
+    "👤 Name: " + name + "%0D%0A" +
+    "📧 User Email: " + email + "%0D%0A%0D%0A" +
+    "💌 Message:%0D%0A" + message;
 
-    let text =
-    "💌 New Message From NAHI Website\n\n" +
-    "👤 Name: " + name + "\n\n" +
-    "📝 Message:\n" + message;
+  window.location.href =
+    "mailto:naremanhesamadin@gmail.com" +
+    "?subject=" + encodeURIComponent(subject) +
+    "&body=" + body;
 
-    let botToken =
-    "8400191092:AAFc8JYJPV0DPcjdlsJNQRA8mJ7Qf2NWLrw";
-
-    let chatId =
-    "PUT_YOUR_CHAT_ID_HERE";
-
-    let url =
-    `https://api.telegram.org/bot${botToken}/sendMessage`;
-
-    await fetch(url,{
-      method:"POST",
-      headers:{
-        "Content-Type":"application/json"
-      },
-      body:JSON.stringify({
-        chat_id:chatId,
-        text:text
-      })
-    });
 
     alert("پەیامەکەت نێردرا 💌");
 
