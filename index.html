@@ -2,7 +2,7 @@
 <html lang="ku" dir="rtl">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>NAHI | بۆ ئازیزترین کەس</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@300;400;500;700;900&display=swap" rel="stylesheet">
@@ -50,7 +50,7 @@
       background:white;
       border-radius:50%;
       animation:twinkle 4s linear infinite;
-      opacity:0.4;
+      opacity:.4;
     }
 
     @keyframes twinkle{
@@ -522,7 +522,7 @@
 
   <h2 class="section-title">ناردنی پیرۆزبایی 💌</h2>
 
-  <form class="message-form" onsubmit="sendMail(event)">
+  <form class="message-form" onsubmit="sendTelegram(event)">
 
     <input
     type="text"
@@ -611,7 +611,7 @@
 
   },1000);
 
-  function sendMail(e){
+  async function sendTelegram(e){
 
     e.preventDefault();
 
@@ -621,16 +621,32 @@
     let message =
     document.getElementById("message").value;
 
-    let subject =
-    "Message From NAHI Website 💌";
+    let text =
+    "💌 New Message From NAHI Website\n\n" +
+    "👤 Name: " + name + "\n\n" +
+    "📝 Message:\n" + message;
 
-    let body =
-    "Name: " + name + "%0D%0A%0D%0A" +
-    "Message:%0D%0A" + message;
+    let botToken =
+    "8400191092:AAFc8JYJPV0DPcjdlsJNQRA8mJ7Qf2NWLrw";
 
-    window.location.href =
-    "mailto:naremanhesamadin@gmail.com?subject="
-    + subject + "&body=" + body;
+    let chatId =
+    "PUT_YOUR_CHAT_ID_HERE";
+
+    let url =
+    `https://api.telegram.org/bot${botToken}/sendMessage`;
+
+    await fetch(url,{
+      method:"POST",
+      headers:{
+        "Content-Type":"application/json"
+      },
+      body:JSON.stringify({
+        chat_id:chatId,
+        text:text
+      })
+    });
+
+    alert("پەیامەکەت نێردرا 💌");
 
   }
 
