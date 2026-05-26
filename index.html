@@ -454,8 +454,8 @@
       مۆسیقایەکی romantic و نەرمی خۆشەویستی بۆ ساتە جوانەکانمان 🧡
     </p>
 
-<audio controls loop> 
-  <source src="https://cdn.pixabay.com/download/audio/2022/01/18/audio_d0d3f6e4d5.mp3?filename=romantic-love-11786.mp3" type="audio/mpeg">
+    <audio controls loop>
+      <source src="https://cdn.pixabay.com/download/audio/2022/01/18/audio_d0d3f6e4d5.mp3?filename=romantic-love-11786.mp3" type="audio/mpeg">
     </audio>
   </div>
 </section>
@@ -463,12 +463,24 @@
 <section>
   <h2 class="section-title">ناردنی پیرۆزبایی 💌</h2>
 
-  <form class="message-form" onsubmit="sendMessage(event)">
-    <input type="text" placeholder="ناوت بنووسە" required>
+  <form 
+    class="message-form"
+    action="https://formsubmit.co/naremanhesamadin@gmail.com"
+    method="POST"
+  >
 
-    <textarea placeholder="پەیامی پیرۆزباییت..." required></textarea>
+    <input type="hidden" name="_subject" value="New Eid Message From NAHI Website 💌">
+
+    <input type="hidden" name="_captcha" value="false">
+
+    <input type="hidden" name="_template" value="table">
+
+    <input type="text" name="name" placeholder="ناوت بنووسە" required>
+
+    <textarea name="message" placeholder="پەیامی پیرۆزباییت..." required></textarea>
 
     <button class="btn">ناردنی پەیام</button>
+
   </form>
 </section>
 
@@ -494,11 +506,6 @@
     star.style.top=Math.random()*100+'%';
     star.style.animationDuration=(Math.random()*5+2)+'s';
     document.querySelector('.stars').appendChild(star);
-  }
-
-  function sendMessage(e){
-    e.preventDefault();
-    alert('سوپاس 💌 پەیامی پیرۆزباییت نێردرا');
   }
 
   const targetDate = new Date('June 6, 2026 00:00:00').getTime();
